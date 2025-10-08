@@ -8,6 +8,7 @@ emissions <- scan(); #Allows you to read all the grouped data
 7.7 22.5 19.3 19.4 16.7 16.9 23.5 18.4
 
 
+                            # --- ITEM 1 --- #
 #Central tendency measures:
 mean_emissions <- mean(emissions); #Calculates the mean of emissions
 median_emissions <- median(emissions); #Calculates the median of emissions
@@ -23,6 +24,7 @@ mode <- function(x){
 }
 mode_emissions <- mode(emissions); #Calculates the mode of emissions
 
+                          # --- ITEM 2 --- #
 
 #Dispersion measures:
 
@@ -34,6 +36,24 @@ stDev_emissions <- sqrt(variance_emissions); #Calculates the standard deviation 
 coefVar_emissions <- (stDev_emissions/mean_emissions) * 100; 
 #Calculates the coefficient of variation of emissions
 
+par(mfrow = c(1,2));#Divides the frame in two columns
+
+#Creates our histogram
+hist(emissions,
+     freq = FALSE,
+     xlab = "Emissions Values",
+     ylab = "Density",
+     col = "skyblue",
+     border = "black")
+
+
+#creates our box plot 
+boxplot(emissions,
+        main = "Emissions",
+        col = "skyblue",
+        border = "black")
+
+par(mfrow = c(1, 1)); #Turn the frame normal again
 
 
 

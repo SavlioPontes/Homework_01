@@ -55,5 +55,17 @@ boxplot(emissions,
 
 par(mfrow = c(1, 1)); #Turn the frame normal again
 
+                        # --- ITEM 3 --- #
+
+q1_emissions = quantile(emissions, 0.25); #Calculates the Quartile 1
+q2_emissions = quantile(emissions, 0.5); #Calculates the Quartile 2
+q3_emissions = quantile(emissions, 0.75); #Calculates the Quartile 3
+IQR_emissions = IQR(emissions); #Calculates the IQR from emissions
+
+                        # --- ITEM 4 --- #
+
+
+
+
 
 

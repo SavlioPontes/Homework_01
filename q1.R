@@ -24,8 +24,6 @@ get_mode <- function(x){
 }
 mode_emissions <- get_mode(emissions); #Calculates the mode of emissions
 
-                          # --- ITEM 2 --- #
-
 #Dispersion measures:
 amplitude_emissions <- diff(range(emissions));
 #Calculates the amplitude of emissions
@@ -35,6 +33,8 @@ variance_emissions <- var(emissions); #Calculates the variance of emissions
 stDev_emissions <- sqrt(variance_emissions); #Calculates the standard deviation of emissions
 coefVar_emissions <- (stDev_emissions/mean_emissions) * 100; 
 #Calculates the coefficient of variation of emissions
+
+                            # --- ITEM 2 --- #
 
 par(mfrow = c(1,2));#Divides the frame in two columns
 
@@ -68,9 +68,6 @@ exceed_limit <- emissions > 25; #Logical vector: TRUE if emission > 25
 days_exceeded <- sum(exceed_limit); #Count of days exceeding the limit
 total_days <- length(emissions); #Total number of emissions records
 exceed_proportion <- days_exceeded/total_days; #Proportion of exceed days
-
-
-
 
 
 

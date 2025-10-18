@@ -1,40 +1,46 @@
 
 #Questão 2
-idades <- c(28, 34, 46, 26, 37, 29, 51, 31, 39, 43, 58, 44, 25, 23, 52, 42, 48, 33, 38, 46)
-#Nacionalidades: italiana, inglesa, belga, espanhola, francesa, alemana
-nacionalidade <- c("Italiana", "Inglesa", "Belga", "Espanhola", "Italiana", "Espanhola", "Francesa", "Belga", "Italiana", "Italiana", "Italiana", "Inglesa", "Francesa", "Espanhola", "Italiana", "Alemana", "Francesa", "Italiana", "Alemana", "Italiana"
+idade <- c(28, 34, 46, 26, 37, 29, 51, 31, 39, 43, 58, 44, 25, 23, 52, 42, 48, 
+           33, 38, 46)
+#Nacionalidade: italiana, inglesa, belga, espanhola, francesa, alemana
+nacionalidade <- c("Italiana", "Inglesa", "Belga", "Espanhola", "Italiana", 
+                   "Espanhola", "Francesa", "Belga", "Italiana", "Italiana", 
+                   "Italiana", "Inglesa", "Francesa", "Espanhola", "Italiana", 
+                   "Alemana", "Francesa", "Italiana", "Alemana", "Italiana"
 )
-renda <- c(2.3, 1.6, 1.2, 0.9, 2.1, 1.6, 1.8, 1.4, 1.2, 2.8, 3.4, 2.7, 1.6, 1.2, 1.1, 2.5, 2.0, 1.7, 2.1, 3.2)
-experiencia <- c(2, 8, 21, 1, 15, 3, 28, 5, 13, 20, 32, 23, 1, 0, 29, 18, 19, 7, 12, 23)
-curriculos <- data.frame(idades, nacionalidade, renda, experiencia)
+renda <- c(2.3, 1.6, 1.2, 0.9, 2.1, 1.6, 1.8, 1.4, 1.2, 2.8, 3.4, 2.7, 1.6, 1.2,
+           1.1, 2.5, 2.0, 1.7, 2.1, 3.2)
+experiencia <- c(2, 8, 21, 1, 15, 3, 28, 5, 13, 20, 32, 23, 1, 0, 29, 18, 19, 7,
+                 12, 23)
+curriculos <- data.frame(idade, nacionalidade, renda, experiencia)
 
 # Estatísticas descritivas
 #item 1
 #Informações
 Informações <- c("Idade", "Renda", "Experiência")
 #Medias
-media_Idades <- mean(idades)
+media_idade <- mean(idade)
 media_Renda <- mean(renda)
 media_Experiencia <- mean(experiencia)
-Media <- c(media_Idades, media_Renda, media_Experiencia)
+Media <- c(media_idade, media_Renda, media_Experiencia)
 #Medianas
-mediana_Idades <- median(idades)
+mediana_idade <- median(idade)
 mediana_Renda <- median(renda)
 mediana_Experiencia <- median(experiencia)
-Mediana <- c(mediana_Idades, mediana_Renda, mediana_Experiencia)
+Mediana <- c(mediana_idade, mediana_Renda, mediana_Experiencia)
 #Desvio padrão
-desvio_Idades <- sd(idades)
+desvio_idade <- sd(idade)
 desvio_Renda <- sd(renda)
 desvio_Experiencia <- sd(experiencia)
-Desvio_Padrão <- c(desvio_Idades, desvio_Renda, desvio_Experiencia)
+Desvio_Padrão <- c(desvio_idade, desvio_Renda, desvio_Experiencia)
 estatisticas = data.frame(Informações,Media, Mediana, Desvio_Padrão)
 print(estatisticas)
 
 #item 2
-library(dplyr)
+library(dplyr) 
 library(tidyverse)
-grupos_nacionalidade <- curriculos %>%
-  group_by(nacionalidade) %>%       # agrupa por nacionalidades
+grupos_nacionalidade <- curriculos %>% 
+  group_by(nacionalidade) %>%       # agrupa por nacionalidade
   summarise(
     Renda_media = mean(renda),
     Experiencia_media = mean(experiencia)
@@ -69,12 +75,66 @@ ggplot(curriculos, aes(x = experiencia, y = renda)) +
   theme_minimal()
 
 #item 4
-prioridades <- curriculos %>%
-  select(idades, nacionalidade)%>%
-  filter(experiencia>10, renda<2)
+prioridade <- curriculos %>%
+  select(idade, nacionalidade)%>%
+  filter(experiencia>10, renda<2) %>%
+  pull(idade)
 
-print("Idade e nacionalidade dos candidatos que atendem aos critérios de prioridade:\n")
-print(prioridades)
+print("Idade e nacionalidade dos candidatos que atendem aos critérios de 
+      prioridade:\n")
+print(prioridade)
 
 print("Número de candidatos que atendem aos critérios de prioridade:")
-print(nrow(prioridades))
+print(nrow(prioridade))
+
+# item 5
+#idade
+par(mfrow = c(1, 6))#divide o quadro em 6 colunas
+nacionalidade_unicas <- unique(curriculos$nacionalidade) 
+#cria um vetor com as nacionalidades
+cores <- c("lightgreen", "skyblue", "gold", "red", "violet", "gray")
+#vetor de cores para diferenciar as nacionalidades
+
+for (i in 1:length(nacionalidade_unicas)) { #for para cada nacionalidade
+  nac <- nacionalidade_unicas[i]#cada loop trata os dados de uma nacionalidade
+  
+  dados_filtrados <- curriculos %>%
+    filter(nacionalidade == nac) %>%
+    pull(idade)#cria um vetor de idades da nacionalidade atual do loop
+  
+  if (i == 1) {#Na primeira iteração cria o label do gráfico
+    ylab_text <- "Idade"
+    yaxt_setting <- 's'
+  }
+  #cria o boxplot
+    boxplot(dados_filtrados,
+          main = nac,
+          ylab = ylab_text,
+          col = cores[i],
+          border = "black",
+          ylim = c(20, 60), #define o limite do eixo y
+          yaxt = yaxt_setting)
+}
+
+#RENDAS
+par(mfrow = c(1,6))
+for (i in 1:length(nacionalidade_unicas)) {
+  nac <- nacionalidade_unicas[i]
+  
+  dados_filtrados <- curriculos %>%
+    filter(nacionalidade == nac) %>%
+    pull(renda)
+  
+  if (i == 1) {
+    ylab_text <- "Renda"
+    yaxt_setting <- 's'
+  }
+  
+  boxplot(dados_filtrados,
+          main = nac,
+          ylab = ylab_text,
+          col = cores[i],
+          border = "black",
+          ylim = c(0,4), 
+          yaxt = yaxt_setting)
+}

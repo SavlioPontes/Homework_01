@@ -39,7 +39,6 @@ estatisticas = data.frame(Informacoes,Media, Mediana, Desvio_Padrao)
 print(estatisticas)
 
 #item 2
-library(dplyr)
 library(tidyverse)
 grupos_nacionalidade <- curriculos %>%
   group_by(nacionalidade) %>%# agrupa por nacionalidade
@@ -80,12 +79,10 @@ ggplot(curriculos, aes(x = experiencia, y = renda)) +
 
 #item 4
 prioridade <- curriculos %>%
-  select(idade, nacionalidade)%>%
-  filter(experiencia>10, renda<2) %>% # filtra as características selecionadas 
-  pull(idade)
+  filter(experiencia > 10, renda < 2) %>%
+  select(idade, nacionalidade)
 
-print("Idade e nacionalidade dos candidatos que atendem aos criterios de
-prioridade:\n")
+print("Idade e nacionalidade dos candidatos que atendem aos criterios de prioridade: \n")
 print(prioridade)
 
 print("Numero de candidatos que atendem aos criterios de prioridade:")

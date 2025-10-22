@@ -79,13 +79,13 @@ ggplot(curriculos, aes(x = experiencia, y = renda)) +
 
 #item 4
 prioridade <- curriculos %>%
-  filter(experiencia > 10, renda < 2) %>%
+  filter(experiencia > 10, renda < 2) %>% # filtra as características selecionadas
   select(idade, nacionalidade)
 
-print("Idade e nacionalidade dos candidatos que atendem aos criterios de prioridade: \n")
+cat("Idade e nacionalidade dos candidatos que atendem aos criterios de prioridade:")
 print(prioridade)
 
-print("Numero de candidatos que atendem aos criterios de prioridade:")
+cat("Numero de candidatos que atendem aos criterios de prioridade:")
 print(nrow(prioridade))
 
 # item 5

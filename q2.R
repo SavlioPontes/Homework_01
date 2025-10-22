@@ -142,5 +142,5 @@ for (i in 1:length(nacionalidade_unicas)) {
           ylim = c(0.5,3.5),
           yaxt = yaxt_setting)
 }
-source("q2.R", echo=FALSE)
+
 

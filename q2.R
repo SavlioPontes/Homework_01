@@ -67,6 +67,8 @@ print(mais_experiente)
 
 #item3
 coeficienteP <- cor(experiencia, renda) # Coeficiente de Pearson
+cat("Coeficiente de Pearson: ")
+print(coeficienteP)
 
 ggplot(curriculos, aes(x = experiencia, y = renda)) +
   geom_point(color = "blue", size = 3) +
@@ -140,3 +142,5 @@ for (i in 1:length(nacionalidade_unicas)) {
           ylim = c(0.5,3.5),
           yaxt = yaxt_setting)
 }
+source("q2.R", echo=FALSE)
+

@@ -3,8 +3,11 @@ setwd("C:\\Users\\savli\\Documents\\GitHub\\Homework_01");
 dataBikes <- read.csv("HW1_bike_sharing.csv", header = TRUE);
 
 # ---- Item 1 ----#
+#função para obter o número de linhas (=número de observações)
 observationNumber <- nrow(dataBikes);
+#função para obter o 1º elemento do vetor com os dias das observações
 startDate <- dataBikes$dteday[1];
+#função para obter o último elemento do vetor com os dias das observações
 endDate <- dataBikes$dteday[observationNumber];
 
 cat("Número de observações:")

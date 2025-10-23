@@ -119,18 +119,18 @@ for (i in 1:length(nacionalidade_unicas)) { #for para cada nacionalidade
 
 #RENDAS
 par(mfrow = c(2,3))
-for (i in 1:length(nacionalidade_unicas)) {
-  nac <- nacionalidade_unicas[i]
+for (i in 1:length(nacionalidade_unicas)) { #for para cada nacionalidade
+  nac <- nacionalidade_unicas[i] #cada loop trata os dados de uma nacionalidade
   
   dados_filtrados <- curriculos %>%
     filter(nacionalidade == nac) %>%
-    pull(renda)
+    pull(renda) #cria um vetor de renda desejada da nacionalidade atual do loop
   
-  if (i == 1) {
+  if (i == 1) { #Na primeira iteracao cria o label do grafico
     ylab_text <- "Renda"
     yaxt_setting <- 's'
   }
-  
+  #cria o boxplot
   boxplot(dados_filtrados,
           main = nac,
           ylab = ylab_text,

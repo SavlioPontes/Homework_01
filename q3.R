@@ -10,6 +10,7 @@ startDate <- dataBikes$dteday[1];
 #função para obter o último elemento do vetor com os dias das observações
 endDate <- dataBikes$dteday[observationNumber];
 
+#Display das informações obtidas
 cat("Número de observações:")
 print(observationNumber)
 

@@ -7,6 +7,15 @@ observationNumber <- nrow(dataBikes);
 startDate <- dataBikes$dteday[1];
 endDate <- dataBikes$dteday[observationNumber];
 
+cat("Número de observações:")
+print(observationNumber)
+
+cat("Data de início da amostra:")
+print(startDate)
+
+cat("Data de fim da amostra:") 
+print(endDate)
+
 # ---- Item 2 ----#
 
 # Measures of Central Tendency

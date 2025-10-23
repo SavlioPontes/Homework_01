@@ -22,23 +22,27 @@ print(endDate)
 
 # ---- Item 2 ----#
 
-# Measures of Central Tendency
+#função para obter a média -> mean
+#função para obter a mediana -> median
+#função para obter os quartis -> quantile
+
+#TEMPERATURA
 tempMean <- mean(dataBikes$temp);
 tempMedian <- median(dataBikes$temp);
 tempQuantile <- quantile(dataBikes$temp,
                          probs = c(0.25, 0.5, 0.75))
-
+#USUÁRIOS CASUAIS
 casualMean <- mean(dataBikes$casual);
 casualMedian <- median(dataBikes$casual);
 casualQuantile <- quantile(dataBikes$casual,
                            probs = c(0.25, 0.5, 0.75));
-
+#USUÁRIOS REGISTRADOS
 registeredMean <- mean(dataBikes$registered);
 registeredMedian <- median(dataBikes$registered);
 registeredQuantile <- quantile(dataBikes$registered,
                                probs = c(0.25, 0.5, 0.75));
 
-# Table with the measures
+# Tabela com os dados
 centralTendTable <- data.frame(
   variable = c("temp", "casual", "registered"),
   Mean = c(tempMean, casualMean, registeredMean),

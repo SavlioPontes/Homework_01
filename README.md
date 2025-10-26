@@ -1,7 +1,7 @@
 ## DESCRIÇÃO DO PROJETO (resolução das seguintes questões)
-Questão 1: Análise de emissões diárias de gases poluentes em uma planta industrial
-Questão 2: Estudo de currículos de candidatos para vaga de gerente de relações exteriores
-Questão 3: Análise de dados de compartilhamento de bicicletas
+- Questão 1: Análise de emissões diárias de gases poluentes em uma planta industrial
+- Questão 2: Estudo de currículos de candidatos para vaga de gerente de relações exteriores
+- Questão 3: Análise de dados de compartilhamento de bicicletas
 
 ### ESTRUTURA
 Homework_01/
@@ -11,6 +11,7 @@ Homework_01/
 - HW1_bike_sharing.csv        # Dataset de bicicletas
 - relatorio.pdf               # Relatório do trabalho (PDF)
 - README.md                   # Este arquivo
+
 ### PROCESSO
 Nesse projeto, foram trabalhadas as competências em R relacionadas à estatística descritiva por meio de questões contextualizadas, nas quais foram calculados e analisados dados como as medidas de tendência central, de dispersão, os quartis das informações fornecidas e visualizações gráficas. A partir desses valores, foi possível fazer interpretações acerca do comportamento dos dados e como ele se traduziu nos contextos apresentados. Além disso, também foram realizados os cálculos teóricos das questões de modo a possibilitar uma comparação com os resultados obtidos pelos métodos utilizados pelo R.
 

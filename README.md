@@ -8,6 +8,7 @@ Homework_01/
 - q1.R                        # Análise das emissões
 - q2.R                        # Análise dos currículos
 - q3.R                        # Análise do bike sharing
+- questions.R                 # Arquivo com todas as questões
 - HW1_bike_sharing.csv        # Dataset de bicicletas
 - relatorio.pdf               # Relatório do trabalho (PDF)
 - README.md                   # Este arquivo
@@ -18,9 +19,15 @@ Nesse projeto, foram trabalhadas as competências em R relacionadas à estatíst
 Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R e q3.R), um para cada questão, os quais foram criados e programados pela plataforma RStudio conectada ao Git. Desse modo, os integrantes faziam suas partes simultaneamente, enviando as alterações feitas para o repositório remoto do gitHub, no qual conseguiam visualizar todo o trabalho.  Ademais, o relatório do projeto foi feito na linguagem LATEX na plataforma Overleaf, que também permite uma edição simultânea dos textos. A seguir, a configuração da divisão de tarefas:
 
 ## INSTRUÇÕES PARA EXECUÇÃO
-Nos códigos, para a resolução das questões, foram utilizadas as seguintes dependências:
-### Script de instalação automática - DEPENDÊNCIAS COMPLETAS
-dependencies <- c(
+Para rodar o código, basta:
+ 1. Clone o Repositório:
+bash
+git clone https://github.com/SavlioPontes/Homework_01.git
+cd Homework_01
+
+ 2. Instale as Dependências
+Execute no R/RStudio:
+rdependencies <- c(
   "dplyr",      # Manipulação de dados (group_by, filter, etc.)
   "tidyverse",  # Inclui ggplot2, readr, tidyr, purrr, etc.
   "ggplot2",    # Gráficos (já incluso no tidyverse, mas para garantir)
@@ -28,6 +35,12 @@ dependencies <- c(
 )
 
 install.packages(dependencies, dependencies = TRUE)
+
+ 3. Execute o código
+Execute no console do R:
+r
+source("questions.R") 
+
 
 ## CONTRIBUIÇÕES
 ### Savlio Carvalho Pontes (Matrícula: 567715)

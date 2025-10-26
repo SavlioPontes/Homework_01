@@ -20,9 +20,8 @@ Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R 
 
 ## INSTRUÇÕES PARA EXECUÇÃO
 Para rodar o código, basta:
- 1. Clone o Repositório:
-bash
-git clone https://github.com/SavlioPontes/Homework_01.git
+ 1. Clone o repositório:
+- git clone https://github.com/SavlioPontes/Homework_01.git
 cd Homework_01
 
  2. Instale as Dependências
@@ -38,8 +37,7 @@ install.packages(dependencies, dependencies = TRUE)
 
  3. Execute o código
 Execute no console do R:
-r
-source("questions.R") 
+- source("questions.R") 
 
 
 ## CONTRIBUIÇÕES

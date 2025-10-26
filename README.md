@@ -27,7 +27,7 @@ cd Homework_01
 
  2. Instale as Dependências
 Execute no R/RStudio:
-rdependencies <- c(
+- rdependencies <- c(
   "dplyr",      # Manipulação de dados (group_by, filter, etc.)
   "tidyverse",  # Inclui ggplot2, readr, tidyr, purrr, etc.
   "ggplot2",    # Gráficos (já incluso no tidyverse, mas para garantir)

@@ -16,7 +16,7 @@ Nesse projeto, foram trabalhadas as competências em R relacionadas à estatíst
 
 Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R e q3.R), um para cada questão, os quais foram criados e programados pela plataforma RStudio conectada ao Git. Desse modo, os integrantes faziam suas partes simultaneamente, enviando as alterações feitas para o repositório remoto do gitHub, no qual conseguiam visualizar todo o trabalho.  Ademais, o relatório do projeto foi feito na linguagem LATEX na plataforma Overleaf, que também permite uma edição simultânea dos textos. A seguir, a configuração da divisão de tarefas:
 
-### INSTRUÇÕES PARA EXECUÇÃO
+## INSTRUÇÕES PARA EXECUÇÃO
 Nos códigos, para a resolução das questões, foram utilizadas as seguintes dependências:
 # Script de instalação automática - DEPENDÊNCIAS COMPLETAS
 dependencies <- c(

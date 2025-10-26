@@ -18,6 +18,7 @@ Nesse projeto, foram trabalhadas as competências em R relacionadas à estatíst
 
 Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R e q3.R), um para cada questão, os quais foram criados e programados pela plataforma RStudio conectada ao Git. Desse modo, os integrantes faziam suas partes simultaneamente, enviando as alterações feitas para o repositório remoto do gitHub, no qual conseguiam visualizar todo o trabalho.  Ademais, o relatório do projeto foi feito na linguagem LATEX na plataforma Overleaf, que também permite uma edição simultânea dos textos. A seguir, a configuração da divisão de tarefas:
 
+
 ## INSTRUÇÕES PARA EXECUÇÃO
 Para rodar o código, basta:
 1. Clone o repositório:
@@ -56,4 +57,7 @@ install.packages(dependencies, dependencies = TRUE)
 - Documentação e organização do repositório
 - Preparação do relatório final em LaTeX
 
-
+## USO DA IA
+Para esse trabalho, a inteligência artifical foi utilizada para otimizar processos, como gerar modelos de código para o LATEX, gerar as tabelas simples de exposição dos dados, encontrar erros nos programas deesenvolvidos e tirar dúvidas sobre a linguagem. As plataformas utilizadas foram o ChatGPT e o DeepSeek. A seguir, os links para as conversas referentes ao projeto:
+- https://chat.deepseek.com/share/ekednx9399cwhpqwjc
+- https://chatgpt.com/share/68fe79e1-c23c-8012-ba04-bfae68529149

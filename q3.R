@@ -171,7 +171,7 @@ plot(dataBikes$X, dataBikes$totalUsers, type = "l",
      xlab = "Dias (Índice)", ylab = "Número de Usuários" 
 )
 #Gráfico de temperatura
-plot(dataBikes$X, dataBikes$temp, type = "l",
+plot(dataBikes$X, dataBikes$tempReal, type = "l",
      col = "red", lwd = 2,
      main = "Tendência da temperatura ao longo do tempo", 
      xlab = "Dias (Índice)", ylab = "Temperatura"

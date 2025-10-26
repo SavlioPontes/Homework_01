@@ -42,14 +42,14 @@ hist(emissions,
      freq = FALSE,
      xlab = "Emissions Values",
      ylab = "Density",
-     main = "Emissions Histogram", # Title adjusted
+     main = "Emissions Histogram",
      col = "skyblue",
      border = "black")
 
 
 # Creates our box plot
 boxplot(emissions,
-        main = "Emissions Boxplot", # Title adjusted
+        main = "Emissions Boxplot",
         col = "skyblue",
         border = "black")
 

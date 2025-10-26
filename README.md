@@ -10,7 +10,7 @@ Homework_01/
 - q3.R                        # Análise do bike sharing
 - questions.R                 # Arquivo com todas as questões
 - HW1_bike_sharing.csv        # Dataset de bicicletas
-- relatorio.pdf               # Relatório do trabalho (PDF)
+- RelatórioHW1.pdf            # Relatório do trabalho (PDF)
 - README.md                   # Este arquivo
 
 ### PROCESSO

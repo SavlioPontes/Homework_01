@@ -20,11 +20,11 @@ Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R 
 
 ## INSTRUÇÕES PARA EXECUÇÃO
 Para rodar o código, basta:
-- 1. Clone o repositório:
+1. Clone o repositório:
 - git clone https://github.com/SavlioPontes/Homework_01.git
 cd Homework_01
 
-- 2. Instale as Dependências #Execute no R/RStudio:
+2. Instale as Dependências #Execute no R/RStudio:
 rdependencies <- c(
   "dplyr",      # Manipulação de dados (group_by, filter, etc.)
   "tidyverse",  # Inclui ggplot2, readr, tidyr, purrr, etc.
@@ -34,7 +34,7 @@ rdependencies <- c(
 
 install.packages(dependencies, dependencies = TRUE)
 
- - 3. Para rodar o código execute no console do R:
+3. Para rodar o código execute no console do R:
  source("questions.R") 
 
 

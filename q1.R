@@ -1,4 +1,4 @@
-emissions <- scan(); # Allows you to read all the grouped data
+emissions <- scan(); # Permite ler todos os dados agrupados
 15.8 22.7 26.8 19.1 18.5 14.4 8.3 25.9 26.4 9.8 21.9 10.5
 17.3 6.2 18.0 22.9 24.6 19.4 12.3 15.9 20.1 17.0 22.3 27.5
 23.9 17.5 11.0 20.4 16.2 20.8 20.9 21.4 18.0 24.3 11.8 17.9
@@ -9,60 +9,101 @@ emissions <- scan(); # Allows you to read all the grouped data
 
 # --- ITEM 1 --- #
 
-# Central tendency measures:
-mean_emissions <- mean(emissions); # Calculates the mean of emissions
-median_emissions <- median(emissions); # Calculates the median of emissions
-# Function for mode:
+# Medidas de tendência central:
+mean_emissions <- mean(emissions); # Calcula a média das emissões
+median_emissions <- median(emissions); # Calcula a mediana
+# Função para moda:
 get_mode <- function(x){
-  ux <- unique(x); # Vector containing each unique element of the original vector
-  count <- tabulate(match(x,ux)); # Counts how many times each element occurs
+  ux <- unique(x); # Vetor contendo cada elemento único do vetor original
+  count <- tabulate(match(x,ux)); # Conta quantas vezes cada elemento ocorre
   if(all(count == 1)){
-    return(NA); # If no elements are repeated, there is no mode
+    return(NA); # Se nenhum elemento se repete, não há moda
   }else{
-    return(ux[which.max(count)]); # If there are repetitions, get the most frequent element
+    return(ux[which.max(count)]); # Se há repetições, obtém o elemento mais frequente
   }
 }
-mode_emissions <- get_mode(emissions); # Calculates the mode of emissions
+mode_emissions <- get_mode(emissions); # Retorna a moda
 
-# Dispersion measures:
+# Medidas de dispersão:
 amplitude_emissions <- diff(range(emissions));
-# Calculates the range of emissions (difference between the largest and the smallest values)
+# Calcula a amplitude (diferença entre maior e menor valor)
 
-variance_emissions <- var(emissions); # Calculates the variance of emissions
-stDev_emissions <- sqrt(variance_emissions); # Calculates the standard deviation of emissions
+variance_emissions <- var(emissions); # Calcula a variância
+stDev_emissions <- sqrt(variance_emissions); # Calcula o desvio padrão
 coefVar_emissions <- (stDev_emissions/mean_emissions) * 100;
-# Calculates the coefficient of variation of emissions
+# Calcula o coeficiente de variação
+
+# Tabela para medidas de tendência central
+tabela_tendencia <- data.frame(
+  Medida = c("Média", "Mediana", "Moda"),
+  Valor = c(
+    mean_emissions,
+    median_emissions,
+    mode_emissions
+  )
+)
+
+# Tabela para medidas de dispersão
+tabela_dispersao <- data.frame(
+  Medida = c("Amplitude", "Variância", "Desvio Padrão", "Coeficiente de Variação"),
+  Valor = c(
+    amplitude_emissions,
+    variance_emissions,
+    stDev_emissions,
+    paste(coefVar_emissions, "%")
+  )
+)
+
+# Exibir as tabelas
+cat("Medidas de Tendência Central:")
+tabela_tendencia
+
+cat("Medidas de Dispersão:")
+tabela_dispersao
 
 # --- ITEM 2 --- #
 
-par(mfrow = c(1,2)); # Divides the plot area into two columns
+par(mfrow = c(1,2)); # Divide a área de plotagem em duas colunas
 
-# Creates our histogram
+# Cria nosso histograma
 hist(emissions,
      freq = FALSE,
-     xlab = "Emissions Values",
-     ylab = "Density",
-     main = "Emissions Histogram", # Title adjusted
+     xlab = "Valores de Emissões",
+     ylab = "Densidade",
+     main = "Histograma de Emissões", # Título ajustado
      col = "skyblue",
      border = "black")
 
-
-# Creates our box plot
+# Cria nosso box plot
 boxplot(emissions,
-        main = "Emissions Boxplot", # Title adjusted
+        main = "Boxplot de Emissões", # Título ajustado
         col = "skyblue",
         border = "black")
 
-par(mfrow = c(1, 1)); # Returns the plot area configuration to normal
+par(mfrow = c(1, 1)); # Retorna a configuração da área de plotagem ao normal
 
 # --- ITEM 3 --- #
 
-q1_emissions = quantile(emissions, 0.25); # Calculates Quartile 1
-q2_emissions = quantile(emissions, 0.5); # Calculates Quartile 2
-q3_emissions = quantile(emissions, 0.75); # Calculates Quartile 3
-IQR_emissions = IQR(emissions); # Calculates the IQR of emissions
+q1_emissions = quantile(emissions, 0.25); # Calcula o Quartil 1
+q2_emissions = quantile(emissions, 0.5); # Calcula o Quartil 2
+q3_emissions = quantile(emissions, 0.75); # Calcula o Quartil 3
+IQR_emissions = IQR(emissions); # Calcula o IQR das emissões
 
+tabela_quartis <- data.frame(
+  Q1 = q1_emissions,
+  Q2 = q2_emissions,
+  Q3 = q3_emissions,
+  IQR = IQR_emissions
+)
+# Remove o nome da linha
+rownames(tabela_quartis) <- NULL
+
+cat("Quartis das Emissões:")
+tabela_quartis
 # --- ITEM 4 --- #
-days_exceeded <- sum(emissions > 25); # Count of days exceeding the limit
-total_days <- length(emissions); # Total number of emissions records
-exceed_proportion <- days_exceeded/total_days; # Proportion of exceeded days
+days_exceeded <- sum(emissions > 25); # Contagem de dias que excederam o limite
+total_days <- length(emissions); # Número total de registros de emissões
+exceed_proportion <- days_exceeded/total_days; # Proporção de dias excedidos
+
+cat("Proporção de dias em que a planta excedeu o limite de 25 unidades:")
+exceed_proportion

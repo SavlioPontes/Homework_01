@@ -18,7 +18,7 @@ Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R 
 
 ### INSTRUÇÕES PARA EXECUÇÃO
 Nos códigos, para a resolução das questões, foram utilizadas as seguintes dependências:
- Script de instalação automática - DEPENDÊNCIAS COMPLETAS
+# Script de instalação automática - DEPENDÊNCIAS COMPLETAS
 dependencies <- c(
   "dplyr",      # Manipulação de dados (group_by, filter, etc.)
   "tidyverse",  # Inclui ggplot2, readr, tidyr, purrr, etc.

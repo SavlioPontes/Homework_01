@@ -1,4 +1,4 @@
-### DESCRIÇÃO DO PROJETO (resolução das seguintes questões)
+## DESCRIÇÃO DO PROJETO (resolução das seguintes questões)
 Questão 1: Análise de emissões diárias de gases poluentes em uma planta industrial
 Questão 2: Estudo de currículos de candidatos para vaga de gerente de relações exteriores
 Questão 3: Análise de dados de compartilhamento de bicicletas
@@ -18,7 +18,7 @@ Para isso, o projeto foi separado em três arquivos de código em R (q1.R, q2.R 
 
 ## INSTRUÇÕES PARA EXECUÇÃO
 Nos códigos, para a resolução das questões, foram utilizadas as seguintes dependências:
-# Script de instalação automática - DEPENDÊNCIAS COMPLETAS
+### Script de instalação automática - DEPENDÊNCIAS COMPLETAS
 dependencies <- c(
   "dplyr",      # Manipulação de dados (group_by, filter, etc.)
   "tidyverse",  # Inclui ggplot2, readr, tidyr, purrr, etc.
@@ -28,7 +28,7 @@ dependencies <- c(
 
 install.packages(dependencies, dependencies = TRUE)
 
-### CONTRIBUIÇÕES
+## CONTRIBUIÇÕES
 ### Savlio Carvalho Pontes (Matrícula: 567715)
 - Implementação e análise da Questão 1 (Análise de emissões)
 - Implementação e análise da Questão 3 (Análise de bike sharing)
